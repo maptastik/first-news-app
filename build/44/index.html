@@ -3,11 +3,39 @@
     <head>
     	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
         <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+        <style>
+        body, html {
+        		font-family: Open Sans, sans-serif;
+        		color: white;
+        		background-color: black;
+        	}
+			#map {
+				width: 100%;
+				height: 600px;
+			}
+			#container {
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			#detail-container {
+				position: relative;
+				width: 50%;
+				margin: 25px auto 0 auto;
+			}
+			h1, p {
+				text-align: center;
+			}
+		</style>
     </head>
     <body>
-    	<div id="map" style="width:100%; height:300px;"></div>
-        <h1>Juan A. Pineda</h1>
-        <p>Juan A. Pineda, 20 year old, Latino male died on 1992-04-30 in a homicide at 4028 Santa Monica Blvd. in Silver Lake.</p>
+    	<div id="map"></div>
+        <div id="container">
+	        <div id="detail-container">
+	        	<h1>Juan A. Pineda</h1>
+	        	<p>Juan A. Pineda, 20 year old, Latino male died on 1992-04-30 in a homicide at 4028 Santa Monica Blvd. in Silver Lake.</p>
+	    	</div>
+	    </div>
         <script type="text/javascript">
             var map = L.map('map').setView([34.092221, -118.281326], 16);
             var mapquestLayer = new L.TileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
